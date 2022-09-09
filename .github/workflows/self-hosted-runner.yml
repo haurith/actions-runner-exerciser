@@ -1,0 +1,14 @@
+---
+name: Run Against A Self Hosted Runner
+on:
+  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch
+  - workflow_dispatch
+jobs:
+  basic:
+    name: Execute a Basic Task
+    runs-on:
+      - linux
+      - self-hosted
+    steps:
+      - run: >-
+          echo "hello world!"
