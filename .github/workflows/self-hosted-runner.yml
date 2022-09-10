@@ -7,7 +7,6 @@ jobs:
   basic:
     name: Execute a Basic Task
     runs-on:
-      - linux
       - self-hosted
     steps:
       - run: >-
