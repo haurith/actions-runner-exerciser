@@ -9,5 +9,5 @@ jobs:
     runs-on:
       - self-hosted
     steps:
-      - run: >-
-          exit 99
+      - run: |
+          echo "The job runs!"
