@@ -10,4 +10,5 @@ jobs:
       - self-hosted
     steps:
       - run: |
+          sudo apt install python3-zstd
           echo "The job runs!"
