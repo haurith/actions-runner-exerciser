@@ -10,5 +10,6 @@ jobs:
       - self-hosted
     steps:
       - run: |
-          sudo apt install python3-zstd
+          sudo touch /root/.ghar
+          sudo ls -lah /root
           echo "The job runs!"
