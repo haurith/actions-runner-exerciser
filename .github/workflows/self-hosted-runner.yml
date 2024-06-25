@@ -12,4 +12,5 @@ jobs:
       - run: |
           sudo touch /root/.ghar
           sudo ls -lah /root
+          podman run --rm --tty quay.io/podman/hello
           echo "The job runs!"
