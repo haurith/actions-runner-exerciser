@@ -9,14 +9,20 @@ jobs:
     runs-on:
       - self-hosted
     steps:
-      - run: |
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Test sudo inside the runner
+        run: |
           sudo touch /root/.ghar
           sudo ls -lah /root
 
-      - run: |
+      - name: Test our favorite container runtime
+        run: |
           podman run --rm --tty quay.io/podman/hello
 
-      - run: |
+      - name: Build and run an image with our favorite container runtime
+        run: |
           ls -lah
           podman build --tag a:1 .
           podman run --rm --tty a:1 cat /date.txt
