@@ -26,3 +26,16 @@ jobs:
           ls -lah
           podman build --tag a:1 .
           podman run --rm --tty a:1 cat /date.txt
+
+  container:
+    container:
+      image: quay.io/centos/centos:stream9-minimal
+
+    runs-on:
+      - self-hosted
+
+    steps:
+      - name: Shell inside the container
+        run: |
+          ls -lah /
+          cat /etc/os-release
