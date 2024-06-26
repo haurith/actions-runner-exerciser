@@ -17,5 +17,6 @@ jobs:
           podman run --rm --tty quay.io/podman/hello
 
       - run: |
+          ls -lah
           podman build --tag a:1 .
           podman run --rm --tty a:1 cat /date.txt
