@@ -12,5 +12,10 @@ jobs:
       - run: |
           sudo touch /root/.ghar
           sudo ls -lah /root
+
+      - run: |
           podman run --rm --tty quay.io/podman/hello
-          echo "The job runs!"
+
+      - run: |
+          podman build --tag a:1 .
+          podman run --rm --tty a:1 cat /date.txt
